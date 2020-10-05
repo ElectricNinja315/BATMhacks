@@ -645,13 +645,13 @@ module.exports.numbers = data.reduce(function(obj, element) {
 var pt = require('periodic-table');
 
 console.log('hello world');
-console.log(pt.all);
+pt_all = pt.all()
 
 function results() {
     const element = document.getElementById('element').value;
     console.log(element.toLowerCase());
 
-    for (const qey of pt.all()) {
+    for (const qey of pt_all) {
         if (qey.symbol.toLowerCase() == element.toLowerCase()) {
             console.log("FOUND IT");
             console.log(qey.atomicNumber);
@@ -672,7 +672,7 @@ function results() {
             elementinfo.innerHTML = output.join("<br>");
         }
     }
-    for (const qey of pt.all()) {
+    for (const qey of pt_all) {
         if (qey.name.toLowerCase() == element.toLowerCase()) {
             console.log("FOUND IT");
             console.log(qey.atomicNumber);
@@ -694,7 +694,7 @@ function results() {
         }
     }
 
-    for (const qey of pt.all()) {
+    for (const qey of pt_all) {
         if (qey.atomicNumber == element) {
             console.log("FOUND IT");
             console.log(qey.atomicNumber);
@@ -720,4 +720,5 @@ function results() {
 // loop through pt.all dataset
 // find a  match 
 // output data > html
+
 },{"periodic-table":4}]},{},[5]);
